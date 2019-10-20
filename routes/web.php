@@ -33,3 +33,5 @@ Route::resource('projects', 'ProjectsController');
 // Route::get('/projects/{project}/eidt', 'ProjectsController@edit'); //display a new form for update a distinct project
 // Route::patch('/projects/{project}', 'ProjectsController@update'); //update a project in database
 // Route::delete('/projects/{project}', 'ProjectsController@destroy'); //delete a project
+
+Route::patch('/tasks/{task}', 'ProjectTasksController@update');
