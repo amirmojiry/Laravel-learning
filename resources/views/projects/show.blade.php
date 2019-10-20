@@ -6,10 +6,8 @@
     </h1>
     <div class="content">
         {{ $project->description }}
+        <p><a href="/projects/{{ $project->id }}/eidt">Edit</a></p>
     </div>
-    <ul>
-        <li><a href="/projects/{{ $project->id }}/edit">Edit</a></li>
-    </ul>
     @if ($project->tasks->count())
         <div>
             @foreach ($project->tasks as $task)
@@ -17,7 +15,7 @@
                     <form action="/tasks/{{ $task->id }}" method="POST">
                         @method('PATCH')
                         <label for="completed" class="checkbox">
-                            <input type="checkbox" name="completed">
+                            <input type="checkbox" name="completed"> 
                             {{ $task->description }}
                         </label>
                     </form>  
