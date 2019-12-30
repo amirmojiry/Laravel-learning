@@ -11,7 +11,7 @@
 |
 */
 
-//Route::get('/', 'ProjectsController@index');
+Route::get('/', 'ProjectsController@index');
 
 /*
 GET /projects (index)
