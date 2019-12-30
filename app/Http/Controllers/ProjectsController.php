@@ -53,7 +53,11 @@ class ProjectsController extends Controller
 
     public function update(Project $project)
     {
-        $project->update(request(['title', 'description']));
+        $attributes = request()->validate([
+            'title' => ['required', 'min:3', 'max:255'],
+            'description' => ['required', 'min:5']
+        ]);
+        $project->update($attributes);
         
         // $project->title = request ('title');
         // $project->description = request ('description');

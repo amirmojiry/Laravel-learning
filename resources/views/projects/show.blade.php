@@ -6,7 +6,7 @@
     </h1>
     <div class="content">
         {{ $project->description }}
-        <p><a href="/projects/{{ $project->id }}/eidt">Edit</a></p>
+        <p><a href="/projects/{{ $project->id }}/edit">Edit</a></p>
     </div>
     @if ($project->tasks->count())
         <div class="box">
