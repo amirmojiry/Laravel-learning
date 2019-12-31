@@ -24,20 +24,25 @@
             @endforeach
         </div>
     @endif
-    <form method="POST" class="box">
-        <div class="field">
-            <label for="description" class="label">New Task</label>
-            <div class="control">
-                <input type="text" class="input">
+    <div class="box">
+        <form method="POST" action="/projects/{{ $project->id }}/tasks">
+            @csrf
+            <div class="field">
+                <label for="description" class="label">New Task</label>
+                <div class="control">
+                    <input type="text" class="input {{$errors->has('description')? 'is-danger': ''}}" 
+                    name="description">
+                </div>
             </div>
-        </div>
-        <div class="field">
-            <div class="control">
-                <button type="submit" class="button is-link">
-                    Add Task
-                </button>
+            <div class="field">
+                <div class="control">
+                    <button type="submit" class="button is-link">
+                        Add Task
+                    </button>
+                </div>
             </div>
-        </div>
-    </form>
+            @include('errors')
+        </form>
+    </div>
     <a href="/projects">Return</a>
 @endsection

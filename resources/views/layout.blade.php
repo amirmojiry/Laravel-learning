@@ -16,8 +16,10 @@
     
 </head>
 <body>
-    <div class="container">
-        @yield('content')
-    </div>
+    <section class="section">
+        <div class="container">
+            @yield('content')
+        </div>
+    </section>
 </body>
 </html>

@@ -14,7 +14,7 @@
             </label>
             <div class="control">
                 <input type="text" class="input {{ $errors->has('title') ? 'is-danger' : '' }}" 
-                    name="title" placeholder="Project Title" value="{{ old ('title') }}" >
+                    name="title" placeholder="Project Title" value="{{ old ('title') }}" required>
             </div>
         </div>
         <div class="field">
@@ -22,7 +22,7 @@
                 Description
             </label>
             <div class="control">
-                <textarea name="description" id="description" class="textarea {{ $errors->has('description')? 'is-danger' : ''}}" >{{ old ('description') }}</textarea>
+                <textarea name="description" id="description" class="textarea {{ $errors->has('description')? 'is-danger' : ''}}" required>{{ old ('description') }}</textarea>
             </div>
         </div>
         <div class="field">
@@ -30,14 +30,6 @@
                 Create
             </button>
         </div>
-        @if ($errors->any())
-            <div class="notification is-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li> 
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('errors')
     </form>
 @endsection
