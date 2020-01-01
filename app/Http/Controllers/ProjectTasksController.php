@@ -9,19 +9,19 @@ use App\Project;
 
 class ProjectTasksController extends Controller
 {
-    public function update (Task $task)
-    {
-        //$task->complete (request()->has ('completed'));
+    // public function update (Task $task)
+    // {
+    //     //$task->complete (request()->has ('completed'));
 
-        //request()->has('completed') ? $task->complete(): $task->incomplete();
+    //     //request()->has('completed') ? $task->complete(): $task->incomplete();
         
-        $method = request()->has('completed') ? 'complete' : 'incomplete';
+    //     $method = request()->has('completed') ? 'complete' : 'incomplete';
 
-        $task->$method();
+    //     $task->$method();
 
 
-        return back();
-    }
+    //     return back();
+    // }
     public function store(Project $project)
     {
         $project->addTask(
