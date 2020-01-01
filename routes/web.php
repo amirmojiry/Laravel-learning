@@ -17,6 +17,8 @@
 
 Route::get('/', function() {
     //dd(app('App\Example'));
+    dd(app('foo'));
+
     return view('welcome');
 });
 
