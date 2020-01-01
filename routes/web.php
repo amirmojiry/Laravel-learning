@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/', 'ProjectsController@index');
+// app()->singleton('App\Services\Twitter', function() {
+//     return new App\Services\Twitter('my-api-key-of-twitter');
+// });
+
+Route::get('/', function() {
+    //dd(app('App\Example'));
+    return view('welcome');
+});
 
 /*
 GET /projects (index)
