@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\Twitter;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,11 +17,17 @@
 //     return new App\Services\Twitter('my-api-key-of-twitter');
 // });
 
-Route::get('/', function() {
+/*Route::get('/', function() {
     //dd(app('App\Example'));
-    dd(app('foo'));
+    //dd(app('foo'));
 
     return view('welcome');
+});*/
+
+
+
+Route::get('/', function(Twitter $twitter) {
+    dd ($twitter);
 });
 
 /*
